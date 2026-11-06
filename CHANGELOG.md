@@ -2,6 +2,14 @@
 
 All notable changes to the "Corduroy Theme" extension will be documented in this file.
 
+## [v1.4.0] - [v1.4.1]
+
+- Fixed C/C++/C#/Razor TextMate scope priority so language-specific and type scopes are no longer clobbered by the broad `variable.other` rule
+- Restored distinct coloring for `entity.name.cs`, `entity.name.type`, and related type scopes (velour)
+- Restored property access coloring to argyle for clearer member readability
+- Rethemed the debug status bar to chamois so it stays on-brand and clearly signals an active debug session
+- Added C# and Razor sample files for scope inspection
+
 ## [v1.3.0] - [v1.4.0]
 
 - Migrated publisher id from `TaylorSattenfield` to **`taysatte`** (matches GitHub username; Marketplace/Open VSX listings are a new identity)

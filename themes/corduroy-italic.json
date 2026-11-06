@@ -399,7 +399,7 @@
     "sideBarSectionHeader.border": "#6f637333",
     "sideBarSectionHeader.foreground": "#cdc8d0",
     "statusBar.background": "#1d1920",
-    "statusBar.debuggingBackground": "#c285b2",
+    "statusBar.debuggingBackground": "#edb392",
     "statusBar.debuggingForeground": "#1d1920",
     "statusBar.foreground": "#887b8c",
     "statusBar.noFolderBackground": "#1d1920",
@@ -793,23 +793,7 @@
         "variable.other",
         "variable.language",
         "variable.function",
-        "variable.argument",
-        "variable.other.local.cpp",
-        "variable.other.global.cpp",
-        "variable.other.member.cpp",
-        "variable.parameter.function.language.python",
-        "meta.function-call.arguments.python",
-        "variable.other.definition.java",
-        "meta.function-call.java",
-        "variable.other.constant.js",
-        "variable.other.readwrite.js",
-        "variable.other.object.js",
-        "variable.other.property",
-        "variable.other.property.js",
-        "variable.other.property.ts",
-        "variable.other.property.tsx",
-        "support.type.property-name",
-        "variable.argument.css"
+        "variable.argument"
       ],
       "settings": {
         "foreground": "#cdc8d0"
@@ -817,7 +801,20 @@
     },
     {
       "scope": [
+        "variable.other.property",
+        "variable.other.property.js",
+        "variable.other.property.ts",
+        "variable.other.property.tsx",
+        "support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#4b8686"
+      }
+    },
+    {
+      "scope": [
         "variable.parameter",
+        "variable.parameter.function.language.python",
         "entity.name.variable.parameter.cs",
         "variable.parameter.cpp"
       ],
@@ -827,6 +824,22 @@
     },
     {
       "scope": "variable.css",
+      "settings": {
+        "foreground": "#d27f91"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "entity.name.type.cpp",
+        "entity.name.type.cs",
+        "entity.name.type.razor",
+        "entity.name.cs",
+        "entity.name.class.cs",
+        "entity.name.namespace.cs",
+        "entity.name.tag.cshtml",
+        "entity.name.tag.razor"
+      ],
       "settings": {
         "foreground": "#d27f91"
       }
@@ -849,7 +862,7 @@
       "fontStyle": "italic"
     },
     "parameter": "#c285b2",
-    "property": "#cdc8d0",
+    "property": "#4b8686",
     "enumMember": "#e99d90",
     "event": "#e99d90",
     "decorator": "#c285b2",

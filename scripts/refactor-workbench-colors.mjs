@@ -406,7 +406,7 @@ function buildColors(p) {
     "sideBarSectionHeader.border": alpha(p.muted, "33"),
     "sideBarSectionHeader.foreground": p.text,
     "statusBar.background": p.base,
-    "statusBar.debuggingBackground": p.paisley,
+    "statusBar.debuggingBackground": p.chamois,
     "statusBar.debuggingForeground": p.base,
     "statusBar.foreground": p.subtle,
     "statusBar.noFolderBackground": p.base,
