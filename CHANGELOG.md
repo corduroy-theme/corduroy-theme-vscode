@@ -7,7 +7,8 @@ All notable changes to the "Corduroy Theme" extension will be documented in this
 - Fixed C/C++/C#/Razor TextMate scope priority so language-specific and type scopes are no longer clobbered by the broad `variable.other` rule
 - Restored distinct coloring for `entity.name.cs`, `entity.name.type`, and related type scopes (velour)
 - Restored property access coloring to argyle for clearer member readability
-- Rethemed the debug status bar to chamois so it stays on-brand and clearly signals an active debug session
+- Softened HTML/XML/Razor tag names to rayon so they read lighter than type (velour) scopes
+- Rethemed the debug status bar to rayon, with status bar item hover/active as a light opacity overlay
 - Added C# and Razor sample files for scope inspection
 
 ## [v1.3.0] - [v1.4.0]

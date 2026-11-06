@@ -399,19 +399,19 @@
     "sideBarSectionHeader.border": "#6f637333",
     "sideBarSectionHeader.foreground": "#cdc8d0",
     "statusBar.background": "#1d1920",
-    "statusBar.debuggingBackground": "#edb392",
+    "statusBar.debuggingBackground": "#e99d90",
     "statusBar.debuggingForeground": "#1d1920",
     "statusBar.foreground": "#887b8c",
     "statusBar.noFolderBackground": "#1d1920",
     "statusBar.noFolderForeground": "#887b8c",
-    "statusBarItem.activeBackground": "#6f637366",
+    "statusBarItem.activeBackground": "#ffffff26",
     "statusBarItem.errorBackground": "#1d1920",
     "statusBarItem.errorForeground": "#e06278",
-    "statusBarItem.focusBorder": "#443c4a",
-    "statusBarItem.hoverBackground": "#443c4a",
+    "statusBarItem.focusBorder": "#ffffff33",
+    "statusBarItem.hoverBackground": "#ffffff1f",
     "statusBarItem.prominentBackground": "#2e2533",
     "statusBarItem.prominentForeground": "#cdc8d0",
-    "statusBarItem.prominentHoverBackground": "#443c4a",
+    "statusBarItem.prominentHoverBackground": "#ffffff1f",
     "statusBarItem.remoteBackground": "#1d1920",
     "statusBarItem.remoteForeground": "#edb392",
     "symbolIcon.arrayForeground": "#887b8c",
@@ -564,14 +564,23 @@
     {
       "scope": [
         "entity.name.section",
-        "entity.name.tag",
         "entity.name.namespace",
         "entity.name.type",
-        "entity.name.type.cpp",
-        "entity.name.tag.css"
+        "entity.name.type.cpp"
       ],
       "settings": {
         "foreground": "#d27f91"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.css",
+        "entity.name.tag.cshtml",
+        "entity.name.tag.razor"
+      ],
+      "settings": {
+        "foreground": "#e99d90"
       }
     },
     {
@@ -831,12 +840,21 @@
         "entity.name.type.razor",
         "entity.name.cs",
         "entity.name.class.cs",
-        "entity.name.namespace.cs",
+        "entity.name.namespace.cs"
+      ],
+      "settings": {
+        "foreground": "#d27f91"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.css",
         "entity.name.tag.cshtml",
         "entity.name.tag.razor"
       ],
       "settings": {
-        "foreground": "#d27f91"
+        "foreground": "#e99d90"
       }
     }
   ],

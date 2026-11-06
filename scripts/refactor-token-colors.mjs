@@ -50,13 +50,20 @@ function buildTokenColors(c, { italic = false } = {}) {
     {
       scope: [
         "entity.name.section",
-        "entity.name.tag",
         "entity.name.namespace",
         "entity.name.type",
         "entity.name.type.cpp",
-        "entity.name.tag.css",
       ],
       settings: colorSettings(c.structural),
+    },
+    {
+      scope: [
+        "entity.name.tag",
+        "entity.name.tag.css",
+        "entity.name.tag.cshtml",
+        "entity.name.tag.razor",
+      ],
+      settings: colorSettings(c.name),
     },
     {
       scope: [
@@ -248,7 +255,7 @@ function buildTokenColors(c, { italic = false } = {}) {
       settings: colorSettings(c.variableCss),
     },
     {
-      // Re-assert type / C# / Razor scopes after variables so they win on ties.
+      // Re-assert type / C# scopes after variables so they win on ties.
       scope: [
         "entity.name.type",
         "entity.name.type.cpp",
@@ -257,10 +264,18 @@ function buildTokenColors(c, { italic = false } = {}) {
         "entity.name.cs",
         "entity.name.class.cs",
         "entity.name.namespace.cs",
+      ],
+      settings: colorSettings(c.structural),
+    },
+    {
+      // Re-assert markup tags after variables (rayon — lighter than velour types).
+      scope: [
+        "entity.name.tag",
+        "entity.name.tag.css",
         "entity.name.tag.cshtml",
         "entity.name.tag.razor",
       ],
-      settings: colorSettings(c.structural),
+      settings: colorSettings(c.name),
     },
   ];
 }
