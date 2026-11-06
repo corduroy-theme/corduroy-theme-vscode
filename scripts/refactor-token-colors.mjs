@@ -50,13 +50,20 @@ function buildTokenColors(c, { italic = false } = {}) {
     {
       scope: [
         "entity.name.section",
-        "entity.name.tag",
         "entity.name.namespace",
         "entity.name.type",
         "entity.name.type.cpp",
-        "entity.name.tag.css",
       ],
       settings: colorSettings(c.structural),
+    },
+    {
+      scope: [
+        "entity.name.tag",
+        "entity.name.tag.css",
+        "entity.name.tag.cshtml",
+        "entity.name.tag.razor",
+      ],
+      settings: colorSettings(c.name),
     },
     {
       scope: [
@@ -221,28 +228,23 @@ function buildTokenColors(c, { italic = false } = {}) {
         "variable.language",
         "variable.function",
         "variable.argument",
-        "variable.other.local.cpp",
-        "variable.other.global.cpp",
-        "variable.other.member.cpp",
-        "variable.parameter.function.language.python",
-        "meta.function-call.arguments.python",
-        "variable.other.definition.java",
-        "meta.function-call.java",
-        "variable.other.constant.js",
-        "variable.other.readwrite.js",
-        "variable.other.object.js",
-        "variable.other.property",
-        "variable.other.property.js",
-        "variable.other.property.ts",
-        "variable.other.property.tsx",
-        "support.type.property-name",
-        "variable.argument.css",
       ],
       settings: colorSettings(c.variable),
     },
     {
       scope: [
+        "variable.other.property",
+        "variable.other.property.js",
+        "variable.other.property.ts",
+        "variable.other.property.tsx",
+        "support.type.property-name",
+      ],
+      settings: colorSettings(c.constant),
+    },
+    {
+      scope: [
         "variable.parameter",
+        "variable.parameter.function.language.python",
         "entity.name.variable.parameter.cs",
         "variable.parameter.cpp",
       ],
@@ -251,6 +253,29 @@ function buildTokenColors(c, { italic = false } = {}) {
     {
       scope: "variable.css",
       settings: colorSettings(c.variableCss),
+    },
+    {
+      // Re-assert type / C# scopes after variables so they win on ties.
+      scope: [
+        "entity.name.type",
+        "entity.name.type.cpp",
+        "entity.name.type.cs",
+        "entity.name.type.razor",
+        "entity.name.cs",
+        "entity.name.class.cs",
+        "entity.name.namespace.cs",
+      ],
+      settings: colorSettings(c.structural),
+    },
+    {
+      // Re-assert markup tags after variables (rayon — lighter than velour types).
+      scope: [
+        "entity.name.tag",
+        "entity.name.tag.css",
+        "entity.name.tag.cshtml",
+        "entity.name.tag.razor",
+      ],
+      settings: colorSettings(c.name),
     },
   ];
 }
@@ -269,7 +294,7 @@ function buildSemanticTokenColors(c, { italic = false } = {}) {
     macro: c.name,
     variable: italic ? { foreground: c.variable, fontStyle: "italic" } : c.variable,
     parameter: c.parameter,
-    property: c.variable,
+    property: c.constant,
     enumMember: c.constantNumeric,
     event: c.name,
     decorator: c.attribute,

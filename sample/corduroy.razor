@@ -1,0 +1,16 @@
+@page "/corduroy"
+@using Corduroy.Sample
+
+<h1>@Title</h1>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "Corduroy";
+
+    private Corduroy Theme { get; set; } = new();
+
+    private string Greet(string name)
+    {
+        return Theme.Greet(name);
+    }
+}
