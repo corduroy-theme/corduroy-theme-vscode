@@ -578,7 +578,8 @@
         "entity.name.tag",
         "entity.name.tag.css",
         "entity.name.tag.cshtml",
-        "entity.name.tag.razor"
+        "entity.name.tag.razor",
+        "support.class.component.razor"
       ],
       "settings": {
         "foreground": "#f0a89b"
@@ -856,7 +857,8 @@
         "entity.name.tag",
         "entity.name.tag.css",
         "entity.name.tag.cshtml",
-        "entity.name.tag.razor"
+        "entity.name.tag.razor",
+        "support.class.component.razor"
       ],
       "settings": {
         "foreground": "#f0a89b"
@@ -899,6 +901,87 @@
     "method.defaultLibrary": "#f0a89b",
     "class.defaultLibrary": "#dc92a3",
     "interface.defaultLibrary": "#dc92a3",
-    "type.defaultLibrary": "#dc92a3"
+    "type.defaultLibrary": "#dc92a3",
+    "namespace:razor": "#dc92a3",
+    "class:razor": "#dc92a3",
+    "enum:razor": "#dc92a3",
+    "interface:razor": "#dc92a3",
+    "struct:razor": "#dc92a3",
+    "type:razor": "#dc92a3",
+    "typeParameter:razor": "#dc92a3",
+    "function:razor": "#f0a89b",
+    "method:razor": "#f0a89b",
+    "macro:razor": "#f0a89b",
+    "variable:razor": {
+      "foreground": "#ddd8df",
+      "fontStyle": "italic"
+    },
+    "parameter:razor": "#cf98c4",
+    "property:razor": "#55a0a0",
+    "enumMember:razor": "#f0a89b",
+    "event:razor": "#f0a89b",
+    "decorator:razor": "#cf98c4",
+    "comment:razor": {
+      "foreground": "#9a8d9e",
+      "fontStyle": "italic"
+    },
+    "string:razor": "#f0bd9c",
+    "keyword:razor": "#55a0a0",
+    "number:razor": "#f0a89b",
+    "operator:razor": "#9a8d9e",
+    "namespace:csharp": "#dc92a3",
+    "class:csharp": "#dc92a3",
+    "enum:csharp": "#dc92a3",
+    "interface:csharp": "#dc92a3",
+    "struct:csharp": "#dc92a3",
+    "type:csharp": "#dc92a3",
+    "typeParameter:csharp": "#dc92a3",
+    "function:csharp": "#f0a89b",
+    "method:csharp": "#f0a89b",
+    "macro:csharp": "#f0a89b",
+    "variable:csharp": {
+      "foreground": "#ddd8df",
+      "fontStyle": "italic"
+    },
+    "parameter:csharp": "#cf98c4",
+    "property:csharp": "#55a0a0",
+    "enumMember:csharp": "#f0a89b",
+    "event:csharp": "#f0a89b",
+    "decorator:csharp": "#cf98c4",
+    "comment:csharp": {
+      "foreground": "#9a8d9e",
+      "fontStyle": "italic"
+    },
+    "string:csharp": "#f0bd9c",
+    "keyword:csharp": "#55a0a0",
+    "number:csharp": "#f0a89b",
+    "operator:csharp": "#9a8d9e",
+    "namespace:aspnetcorerazor": "#dc92a3",
+    "class:aspnetcorerazor": "#dc92a3",
+    "enum:aspnetcorerazor": "#dc92a3",
+    "interface:aspnetcorerazor": "#dc92a3",
+    "struct:aspnetcorerazor": "#dc92a3",
+    "type:aspnetcorerazor": "#dc92a3",
+    "typeParameter:aspnetcorerazor": "#dc92a3",
+    "function:aspnetcorerazor": "#f0a89b",
+    "method:aspnetcorerazor": "#f0a89b",
+    "macro:aspnetcorerazor": "#f0a89b",
+    "variable:aspnetcorerazor": {
+      "foreground": "#ddd8df",
+      "fontStyle": "italic"
+    },
+    "parameter:aspnetcorerazor": "#cf98c4",
+    "property:aspnetcorerazor": "#55a0a0",
+    "enumMember:aspnetcorerazor": "#f0a89b",
+    "event:aspnetcorerazor": "#f0a89b",
+    "decorator:aspnetcorerazor": "#cf98c4",
+    "comment:aspnetcorerazor": {
+      "foreground": "#9a8d9e",
+      "fontStyle": "italic"
+    },
+    "string:aspnetcorerazor": "#f0bd9c",
+    "keyword:aspnetcorerazor": "#55a0a0",
+    "number:aspnetcorerazor": "#f0a89b",
+    "operator:aspnetcorerazor": "#9a8d9e"
   }
 }

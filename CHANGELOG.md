@@ -2,6 +2,11 @@
 
 All notable changes to the "Corduroy Theme" extension will be documented in this file.
 
+## [v1.4.1] - [v1.4.2]
+
+- Colored Blazor component tags (`support.class.component.razor`) with rayon like HTML tags
+- Added language-scoped `semanticTokenColors` for `razor`, `csharp`, and `aspnetcorerazor` so Dark+ defaults no longer override Corduroy for classes, methods, enums, and related tokens
+
 ## [v1.4.0] - [v1.4.1]
 
 - Fixed C/C++/C#/Razor TextMate scope priority so language-specific and type scopes are no longer clobbered by the broad `variable.other` rule

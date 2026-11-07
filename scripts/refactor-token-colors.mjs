@@ -62,6 +62,7 @@ function buildTokenColors(c, { italic = false } = {}) {
         "entity.name.tag.css",
         "entity.name.tag.cshtml",
         "entity.name.tag.razor",
+        "support.class.component.razor",
       ],
       settings: colorSettings(c.name),
     },
@@ -268,12 +269,13 @@ function buildTokenColors(c, { italic = false } = {}) {
       settings: colorSettings(c.structural),
     },
     {
-      // Re-assert markup tags after variables (rayon — lighter than velour types).
+      // Re-assert markup / Blazor component tags after variables (rayon).
       scope: [
         "entity.name.tag",
         "entity.name.tag.css",
         "entity.name.tag.cshtml",
         "entity.name.tag.razor",
+        "support.class.component.razor",
       ],
       settings: colorSettings(c.name),
     },
@@ -281,6 +283,39 @@ function buildTokenColors(c, { italic = false } = {}) {
 }
 
 function buildSemanticTokenColors(c, { italic = false } = {}) {
+  const variable = italic
+    ? { foreground: c.variable, fontStyle: "italic" }
+    : c.variable;
+  const comment = italic
+    ? { foreground: c.comment, fontStyle: "italic" }
+    : c.comment;
+
+  // Language-scoped keys beat VS Dark+ defaults that leak for Razor/C#.
+  const languageScoped = {};
+  for (const lang of ["razor", "csharp", "aspnetcorerazor"]) {
+    languageScoped[`namespace:${lang}`] = c.structural;
+    languageScoped[`class:${lang}`] = c.structural;
+    languageScoped[`enum:${lang}`] = c.structural;
+    languageScoped[`interface:${lang}`] = c.structural;
+    languageScoped[`struct:${lang}`] = c.structural;
+    languageScoped[`type:${lang}`] = c.structural;
+    languageScoped[`typeParameter:${lang}`] = c.structural;
+    languageScoped[`function:${lang}`] = c.name;
+    languageScoped[`method:${lang}`] = c.name;
+    languageScoped[`macro:${lang}`] = c.name;
+    languageScoped[`variable:${lang}`] = variable;
+    languageScoped[`parameter:${lang}`] = c.parameter;
+    languageScoped[`property:${lang}`] = c.constant;
+    languageScoped[`enumMember:${lang}`] = c.constantNumeric;
+    languageScoped[`event:${lang}`] = c.name;
+    languageScoped[`decorator:${lang}`] = c.attribute;
+    languageScoped[`comment:${lang}`] = comment;
+    languageScoped[`string:${lang}`] = c.string;
+    languageScoped[`keyword:${lang}`] = c.keyword;
+    languageScoped[`number:${lang}`] = c.constantNumeric;
+    languageScoped[`operator:${lang}`] = c.punctuation;
+  }
+
   return {
     namespace: c.structural,
     class: c.structural,
@@ -292,13 +327,13 @@ function buildSemanticTokenColors(c, { italic = false } = {}) {
     function: c.name,
     method: c.name,
     macro: c.name,
-    variable: italic ? { foreground: c.variable, fontStyle: "italic" } : c.variable,
+    variable,
     parameter: c.parameter,
     property: c.constant,
     enumMember: c.constantNumeric,
     event: c.name,
     decorator: c.attribute,
-    comment: italic ? { foreground: c.comment, fontStyle: "italic" } : c.comment,
+    comment,
     string: c.string,
     keyword: c.keyword,
     number: c.constantNumeric,
@@ -311,6 +346,7 @@ function buildSemanticTokenColors(c, { italic = false } = {}) {
     "class.defaultLibrary": c.structural,
     "interface.defaultLibrary": c.structural,
     "type.defaultLibrary": c.structural,
+    ...languageScoped,
   };
 }
 
